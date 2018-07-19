@@ -1,11 +1,11 @@
+
+
 const express = require('express');
-
 const fs=require('fs');
-
 const app=express();
-
-
 const hbs=require('hbs');
+
+const port=process.env.PORT || 3000;
 
 hbs.registerPartials(__dirname+'/views/partials');
 //how to use handlebars to create dynamic pages
@@ -72,6 +72,6 @@ app.get('/bad',(req,res)=>{
     });
 });
 
-app.listen(3000,()=>{
-    console.log('Server is up on port 3000'); 
+app.listen(port,()=>{
+    console.log(`Server is up on port ${port}`); 
 });
