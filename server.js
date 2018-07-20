@@ -13,7 +13,8 @@ app.set('view engine','hbs');
 
 
 app.use((req,res,next) =>{
-    res.render('maintenance.hbs');
+   // res.render('maintenance.hbs');
+   next();
 });
 
 
@@ -47,7 +48,7 @@ hbs.registerHelper('screamIt',(text)=>{
 
 //handler for http request
 app.get('/', (req, res) =>{
-//res.send('<h1>Jai Hanuman</h1>');
+
 /*res.send({
     name: 'Naren',
     likes: ['workout', 'movies']
@@ -63,6 +64,12 @@ app.get('/about',(req,res)=>{
     //res.send('About Page');
     res.render('about.hbs',{
         pagetitle: 'About Page'  
+    });
+});
+
+app.get('/projects',(req,res)=>{
+    res.render('projects.hbs',{
+        pagetitle: 'Projects Page'
     });
 });
 
